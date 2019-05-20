@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { Fragment} from 'react';
 
-
-export default class Dice extends React.Component {
-
-   roll () {
-        return Math.floor((Math.random() * 6) + 1)
-      }
-
-    render() {
-        return <button onClick={this.roll} value='Roll' />
-    }
+const Dice = (props) => {
+  return (  
+          <Fragment>
+            <h2>{props.diceValue}</h2>
+          </Fragment>
+          );
 }
+ 
+export default Dice;
