@@ -1,0 +1,11 @@
+button {
+    height: 5em;
+    width: 8em;
+    font-size: 1em;
+    margin-top: 2em;
+    border-radius: 15%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:focus { outline: none; }

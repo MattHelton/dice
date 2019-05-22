@@ -1,21 +1,32 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import Dice from './dice';
+import RollButton from './rollButton';
 
 export default class Threes extends React.Component {
     state = {
-        diceValue: null
+        rolledDice: [],
+        chosenDice: []
     }
     roll = () => {
-        let dice = Math.floor((Math.random() * 6) + 1)
-        this.setState({diceValue: dice })
+        return Math.floor((Math.random() * 6) + 1)
+      }
+
+      threesRoll = () => {
+          let rolledDice = this.state.rolledDice
+          for(let i = 0; i < 5; i++){
+            rolledDice.push(this.roll())}
+            this.setState({rolledDice: rolledDice})
+      }
+
+      chooseDice = () => {
+          
       }
     render() {
         return (
             <Fragment>
-                <button onClick={this.roll} value='Roll'>Roll</button>
-                <Dice diceValue={this.state.diceValue}/>
+                <RollButton onClick={this.threesRoll}/>
+                <Dice rolledDice={this.state.rolledDice}/>
             </Fragment>
         )
     }
-
 } 
